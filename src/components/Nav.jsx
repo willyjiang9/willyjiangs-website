@@ -8,7 +8,7 @@ export default function Nav() {
           <a href="#about">about</a>
           <a href="#resume">resume</a>
           <a href="#hi">say hi</a>
-          <span className="nav-status"><span className="live" /> Open to roles</span>
+          <span className="nav-status"><span className="live" /> open to roles</span>
         </div>
       </div>
     </nav>

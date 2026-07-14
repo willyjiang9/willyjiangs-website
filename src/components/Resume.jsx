@@ -18,10 +18,10 @@ export default function Resume() {
 
       <div className="resume-bar reveal">
         <Magnetic className="btn btn-solid" href={RESUME_PDF} download="Willy_Jiang_Resume.pdf">
-          Download PDF ↓
+          download pdf ↓
         </Magnetic>
         <a className="btn btn-ghost" href={RESUME_PDF} target="_blank" rel="noopener">
-          Open in new tab ↗
+          open in new tab ↗
         </a>
       </div>
 

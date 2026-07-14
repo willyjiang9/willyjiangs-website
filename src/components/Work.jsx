@@ -11,7 +11,7 @@ const PROJECTS = [
 export default function Work() {
   return (
     <section className="section wrap" id="work">
-      <div className="section-head reveal"><span className="num">00</span><h2>Selected work</h2></div>
+      <div className="section-head reveal"><span className="num">00</span><h2>selected work</h2></div>
       <div className="idx">
         {PROJECTS.map((p, i) => {
           const external = p.href.startsWith('http')

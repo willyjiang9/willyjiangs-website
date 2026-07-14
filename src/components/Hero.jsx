@@ -60,8 +60,8 @@ export default function Hero() {
             i enjoy solving problems, learning new things, and building the occasional side project. right now, i'm focused on making a lasting impact at Boeing
           </p>
           <div className="hero-cta">
-            <Magnetic className="btn btn-solid" href="#work">See the work ↓</Magnetic>
-            <Magnetic className="btn btn-ghost" href="#hi">Get in touch</Magnetic>
+            <Magnetic className="btn btn-solid" href="#work">see the work ↓</Magnetic>
+            <Magnetic className="btn btn-ghost" href="#hi">get in touch</Magnetic>
           </div>
         </div>
       </div>

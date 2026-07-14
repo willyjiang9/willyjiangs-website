@@ -1,8 +1,8 @@
 const PROJECTS = [
   { name: 'The Boeing Company', desc: 'Global Aerospace & Aviation | BCA 767 Program Management Intern', year: '2026', href: 'https://www.boeing.com/', building: false },
   { name: 'Expeditors',  desc: 'Global Freight Forwarding | Customs Brokerage Intern', year: '2025', href: 'https://www.expeditors.com/', building: false },
-  { name: 'Relish',  desc: 'Marketing & Analytics Startup| Marketing & Management Intern', year: '2024', href: 'https://grandviewbuilder.com/', building: false },
-  { name: 'Grandview Builder',   desc: 'Residential Contracting | Project Manager', year: '2024', href: 'https://tryrelish.com/', building: false },
+  { name: 'Relish',  desc: 'Marketing & Analytics Startup| Marketing & Management Intern', year: '2024', href: 'https://tryrelish.com/', building: false },
+  { name: 'Grandview Builder',   desc: 'Residential Contracting | Project Manager', year: '2024', href: 'https://grandviewbuilder.com/', building: false },
   { name: "r'courses", desc: 'Course reviews for UC Riverside', year: '2026', href: 'https://rcourses.org', building: false },
   { name: 'memoiv', desc: 'Multi-user journaling app', year: '2026', href: 'https://memoiv.com', building: false },
   

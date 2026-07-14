@@ -10,7 +10,7 @@ export default function Footer() {
           <a href="https://memoiv.com" target="_blank" rel="noopener">memoiv</a>
           <a href="https://rcourses.org" target="_blank" rel="noopener">r'courses</a>
         </div>
-        <div className="foot-base"><span>© 2026 Willy Jiang</span><span>Riverside, California</span></div>
+        <div className="foot-base"><span>© 2026 Willy Jiang</span><span>California</span></div>
       </div>
     </footer>
   )

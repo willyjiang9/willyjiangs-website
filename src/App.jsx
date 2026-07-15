@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Lenis from 'lenis'
 import CustomCursor from './components/CustomCursor'
 import Nav from './components/Nav'
@@ -58,6 +59,8 @@ export default function App() {
       <Marquee />
       <main><Work /><About /><Resume /></main>
       <Footer />
+      <Analytics />
     </>
   )
 }
+

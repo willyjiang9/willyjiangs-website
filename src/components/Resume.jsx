@@ -25,7 +25,7 @@ export default function Resume() {
         </a>
       </div>
 
-      <div className={`file-row${open ? ' is-open' : ''}`}>
+      <div className={`resume-stage${open ? ' is-open' : ''}${reduce ? ' is-reduce' : ''}`}>
         <button
           type="button"
           className="file-folder"
@@ -33,33 +33,35 @@ export default function Resume() {
           aria-controls="resume-sheet"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="file-tab">Resume</span>
+          <span className="file-tab">resume</span>
           <span className="file-face">
             <span className="file-name">Willy Jiang</span>
-            <span className="file-meta">1 page · PDF</span>
-            <span className="file-cue">{open ? 'tap to close' : 'open →'}</span>
+            <span className="file-meta">1 page · pdf</span>
+            <span className="file-cue">{open ? 'close ←' : 'open →'}</span>
           </span>
         </button>
 
-        <div className="file-drawer" id="resume-sheet">
-          <a
-            className="file-sheet"
-            href={RESUME_PDF}
-            target="_blank"
-            rel="noopener"
-            aria-label="Open Willy Jiang resume PDF"
-            tabIndex={open ? 0 : -1}
-            onClick={(e) => { if (!open) e.preventDefault() }}
-          >
-            <img
-              src={RESUME_PREVIEW}
-              alt="Willy Jiang resume"
-              width={1530}
-              height={1980}
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
+        <div className="file-panel" id="resume-sheet">
+          <div className="file-panel-inner">
+            <a
+              className="file-sheet"
+              href={RESUME_PDF}
+              target="_blank"
+              rel="noopener"
+              aria-label="Open Willy Jiang resume PDF"
+              tabIndex={open ? 0 : -1}
+              onClick={(e) => { if (!open) e.preventDefault() }}
+            >
+              <img
+                src={RESUME_PREVIEW}
+                alt="Willy Jiang resume"
+                width={1530}
+                height={1980}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </section>

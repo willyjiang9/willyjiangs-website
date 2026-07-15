@@ -92,11 +92,21 @@ img { max-width: 100%; height: auto; }
 .line-mask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.14em; /* room for descenders (y, g, etc.) */
-  margin-bottom: -0.14em; /* keep the tight stack */
+  padding-bottom: 0.18em; /* room for descenders + accent underline */
+  margin-bottom: -0.18em; /* keep the tight stack */
 }
 .hero h1 .accent { color: var(--accent); position: relative; }
-.hero h1 .accent::after { content: ""; position: absolute; left: 0; bottom: 0.06em; height: 0.09em; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
+.hero h1 .accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.06em; /* sit under descenders (y) */
+  height: 0.085em;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
 .hero.loaded h1 .accent::after { animation: swipe .7s 0.9s cubic-bezier(.6,0,.2,1) forwards; }
 @keyframes swipe { to { transform: scaleX(1); } }
 .hero-foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; margin-top: 52px; }

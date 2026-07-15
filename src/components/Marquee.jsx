@@ -1,4 +1,4 @@
-const WORDS = ['Operations', 'Supply chain', 'Strategy', 'Project Management', 'Building things', 'Development']
+const WORDS = ['Operations', 'Supply chain', 'AI', 'Technology','Strategy', 'Project Management', 'Building things', 'Process Improvement','Development']
 export default function Marquee() {
   const items = [...WORDS, ...WORDS]
   return (

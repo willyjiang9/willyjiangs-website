@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import Lenis from 'lenis'
 import CustomCursor from './components/CustomCursor'
+import GoogleAnalytics from './components/GoogleAnalytics'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -60,6 +61,7 @@ export default function App() {
       <main><Work /><About /><Resume /></main>
       <Footer />
       <Analytics />
+      <GoogleAnalytics />
     </>
   )
 }

@@ -12,7 +12,7 @@ export default function About() {
         </div>
         <div className="about-lead reveal">
           <p>i am always looking for my next challenge. i enjoy building and being inspired by cool people doing cool things.</p>
-          <p>i'm a hobby-hoppper. the top 3 things keeping me busy are golf, basketball and music. i've also been lifting weights for about four years now. currently i bench 370lbs, squat 465lbs and deadlift 575lbs.</p> 
+          <p>i'm a hobby-hoppper. the top 3 things keeping me busy are golf, basketball and music. i've also been lifting weights for about four years now. currently i bench 370lbs, squat 470lbs and deadlift 585lbs.</p> 
           <p>i love trying new foods and eating out. always looking to make new connections, so shoot me a message.</p>
         </div>
       </div>

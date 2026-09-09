@@ -1,5 +1,5 @@
 const FACTS = [
-  ['now', 'program management intern @ Boeing'], ['undergrad', 'b.a. business-economics @ ucr (2022-2025)'], ['post-grad', 'mba of oscm @ ucr (2025-2027)'],['based', 'riverside, ca'],
+  ['recent', 'program management intern @ Boeing'], ['undergrad', 'b.a. business-economics @ ucr (2022-2025)'], ['post-grad', 'mba of oscm @ ucr (2025-2027)'],['based', 'riverside, ca'],
   ['roots', 'hayward, ca'], ['speaks', 'english · 中文'], 
 ]
 export default function About() {
@@ -11,9 +11,10 @@ export default function About() {
           {FACTS.map(([k, v]) => <div className="row" key={k}><span className="k">{k}</span><span>{v}</span></div>)}
         </div>
         <div className="about-lead reveal">
-          <p>i am always looking for my next challenge. i enjoy building and being inspired by cool people doing cool things.</p>
-          <p>i'm a hobby-hoppper. the top 3 things keeping me busy are golf, basketball and music. i've also been lifting weights for about four years now. currently i bench 370lbs, squat 470lbs and deadlift 585lbs.</p> 
-          <p>i love trying new foods and eating out. always looking to make new connections, so shoot me a message.</p>
+          <p>i’m always looking for my next challenge. i enjoy building, experimenting with new ideas, and being inspired by cool people doing cool things. i’m especially interested in technology, startups, and the way new products can solve real problems and change how people live and work.</p>
+          <p>outside of work, i’m a hobby-hopper. the three things keeping me busiest right now are golf, basketball, and music, but i’m always picking up something new. i’ve also been lifting weights for about four years. my current best lifts are a 370 lb bench, 470 lb squat, and 585 lb deadlift.</p>
+          <p>i love trying new foods, finding new places to eat, traveling when i get the chance, and meeting people with completely different interests and backgrounds. whether it’s talking about tech, business, a random side project, or where to find the best food, i’m always open to a good conversation.</p>
+          <p>i’m always looking to learn from interesting people, work on ambitious ideas, and make new connections, so feel free to shoot me a message.</p>
         </div>
       </div>
     </section>

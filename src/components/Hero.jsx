@@ -57,7 +57,7 @@ export default function Hero() {
 
         <div className="hero-foot reveal">
           <p className="hero-intro">
-            i enjoy solving problems, learning new things, and building the occasional side project. right now, i'm focused on making a lasting impact at Boeing
+            I enjoy solving problems, learning new things, and building the occasional side project. After completing my internship at Boeing, I’m focused on growing at the intersection of technology, business, and innovation while building things that create a lasting impact
           </p>
           <div className="hero-cta">
             <Magnetic className="btn btn-solid" href="#work">see the work ↓</Magnetic>

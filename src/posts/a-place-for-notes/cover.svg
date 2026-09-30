@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="notes cover">
+  <rect width="1200" height="750" fill="#171410"/>
+  <text x="72" y="400" fill="#EDE9E1" font-family="Georgia, serif" font-size="92" font-weight="700">notes</text>
+  <rect x="76" y="448" width="148" height="10" fill="#F0330F"/>
+</svg>

@@ -7,7 +7,7 @@ export default function Nav() {
           <a href="/#work">work</a>
           <a href="/#about">about</a>
           <a href="/#resume">resume</a>
-          <a href="/notes">notes</a>
+          <a href="/#blog">blog</a>
           <a href="/#hi">say hi</a>
           <span className="nav-status"><span className="live" /> open to roles</span>
         </div>

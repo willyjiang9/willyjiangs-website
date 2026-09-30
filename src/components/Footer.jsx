@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="wrap">
         <h2 className="reveal">say <a href="mailto:willyj915@gmail.com">hi</a></h2>
         <div className="foot-links reveal">
-          <a href="/notes">notes</a>
+          <a href="/#blog">blog</a>
           <a href="mailto:willyj915@gmail.com">willyj915@gmail.com</a>
           <a href="/Willy_Jiang_Resume.pdf" target="_blank" rel="noopener">resume</a>
           <a href="https://www.linkedin.com/in/willyjiangg/" target="_blank" rel="noopener">linkedin</a>

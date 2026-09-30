@@ -10,7 +10,7 @@ const rawAssets = import.meta.glob('../posts/*/*.{png,jpg,jpeg,webp,gif,svg}', {
   eager: true,
 })
 
-const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
 function splitFrontmatter(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/)
@@ -58,6 +58,15 @@ export function formatDate(iso) {
   return `${MONTHS[month - 1]} ${day}, ${year}`
 }
 
+function readMinutes(body) {
+  const words = body
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
+    .replace(/[#>*_`\[\]\(\)]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean).length
+  return Math.max(1, Math.round(words / 200))
+}
+
 function excerptFrom(body) {
   const block = body
     .split(/\n\s*\n/)
@@ -82,7 +91,10 @@ const posts = Object.entries(rawPosts)
       slug,
       title: data.title || slug,
       date: data.date || '',
+      category: (data.category || '').toLowerCase(),
+      url: data.url || '',
       cover: data.cover ? resolveSrc(slug, data.cover) : '',
+      minutes: readMinutes(body),
       body,
       excerpt: excerptFrom(body),
     }

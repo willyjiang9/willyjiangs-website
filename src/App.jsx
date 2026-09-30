@@ -26,9 +26,8 @@ function usePathname() {
 
 export default function App() {
   const path = usePathname()
-  const noteSlug = path.match(/^\/notes\/([^/]+)\/?$/)?.[1] || ''
-  const isNotes = path === '/notes' || path === '/notes/'
-  const isHome = path === '/'
+  const noteSlug = path.match(/^\/blog\/([^/]+)\/?$/)?.[1] || ''
+  const isHome = path === '/' || path === '/blog' || path === '/blog/'
 
   useEffect(() => {
     if (!isHome || !window.location.hash) return
@@ -38,15 +37,20 @@ export default function App() {
   }, [isHome])
 
   useEffect(() => {
+    if (path !== '/blog' && path !== '/blog/') return
+    window.history.replaceState(null, '', '/#blog')
+    const el = document.querySelector('#blog')
+    if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 68)
+  }, [path])
+
+  useEffect(() => {
     if (noteSlug) {
       const post = getPost(noteSlug)
       document.title = post ? `${post.title} — Willy Jiang` : 'Willy Jiang'
-    } else if (isNotes) {
-      document.title = 'notes — Willy Jiang'
     } else {
       document.title = 'Willy Jiang'
     }
-  }, [noteSlug, isNotes])
+  }, [noteSlug])
 
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -70,7 +74,7 @@ export default function App() {
       let url
       try { url = new URL(a.getAttribute('href'), window.location.href) } catch { return }
       if (url.origin !== window.location.origin) return
-      const internal = url.pathname === '/' || url.pathname === '/notes' || url.pathname.startsWith('/notes/')
+      const internal = url.pathname === '/' || url.pathname === '/blog' || url.pathname.startsWith('/blog/')
       if (!internal) return
 
       const scrollToHash = () => {
@@ -121,11 +125,11 @@ export default function App() {
     <>
       <CustomCursor />
       <Nav />
-      {noteSlug ? <Note slug={noteSlug} /> : isNotes ? <Notes /> : (
+      {noteSlug ? <Note slug={noteSlug} /> : (
         <>
           <Hero />
           <Marquee />
-          <main><Work /><About /><Resume /></main>
+          <main><Work /><About /><Resume /><Notes /></main>
         </>
       )}
       <Footer />

@@ -5,7 +5,7 @@ const FACTS = [
 export default function About() {
   return (
     <section className="section wrap" id="about">
-      <div className="section-head reveal"><span className="num">01</span><h2>about</h2></div>
+      <div className="section-head reveal"><h2>about</h2></div>
       <div className="about-grid">
         <div className="about-side reveal">
           {FACTS.map(([k, v]) => <div className="row" key={k}><span className="k">{k}</span><span>{v}</span></div>)}

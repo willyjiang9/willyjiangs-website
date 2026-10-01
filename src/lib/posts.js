@@ -10,7 +10,7 @@ const rawAssets = import.meta.glob('../posts/*/*.{png,jpg,jpeg,webp,gif,svg}', {
   eager: true,
 })
 
-const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 function splitFrontmatter(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/)

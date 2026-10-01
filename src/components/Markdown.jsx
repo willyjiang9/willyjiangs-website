@@ -115,40 +115,72 @@ function inline(text, slug, keyPrefix) {
   return nodes
 }
 
+function renderBlock(block, slug, key) {
+  if (block.type === 'h3') return <h3 key={key}>{inline(block.text, slug, key)}</h3>
+  if (block.type === 'quote') return <blockquote key={key}>{inline(block.text, slug, key)}</blockquote>
+  if (block.type === 'ul') {
+    return (
+      <ul key={key}>
+        {block.items.map((item, j) => <li key={j}>{inline(item, slug, `${key}-${j}`)}</li>)}
+      </ul>
+    )
+  }
+  if (block.type === 'ol') {
+    return (
+      <ol key={key}>
+        {block.items.map((item, j) => <li key={j}>{inline(item, slug, `${key}-${j}`)}</li>)}
+      </ol>
+    )
+  }
+  if (block.type === 'img') {
+    return (
+      <figure key={key}>
+        <img src={resolveSrc(slug, block.src)} alt={block.alt} />
+        {block.alt ? <figcaption>{block.alt}</figcaption> : null}
+      </figure>
+    )
+  }
+  return <p key={key}>{inline(block.text, slug, key)}</p>
+}
+
+function groupSections(blocks) {
+  const intro = []
+  const sections = []
+  let current = null
+
+  blocks.forEach((block, index) => {
+    if (block.type === 'h1' || block.type === 'h2') {
+      current = { key: `section-${index}`, heading: block, blocks: [] }
+      sections.push(current)
+      return
+    }
+    if (current) current.blocks.push({ block, index })
+    else intro.push({ block, index })
+  })
+
+  return { intro, sections }
+}
+
 export default function Markdown({ slug, source }) {
-  const blocks = parseBlocks(source)
+  const { intro, sections } = groupSections(parseBlocks(source))
+
   return (
     <div className="note-body">
-      {blocks.map((block, i) => {
-        const key = `${block.type}-${i}`
-        if (block.type === 'h1') return <h2 key={key}>{inline(block.text, slug, key)}</h2>
-        if (block.type === 'h2') return <h2 key={key}>{inline(block.text, slug, key)}</h2>
-        if (block.type === 'h3') return <h3 key={key}>{inline(block.text, slug, key)}</h3>
-        if (block.type === 'quote') return <blockquote key={key}>{inline(block.text, slug, key)}</blockquote>
-        if (block.type === 'ul') {
-          return (
-            <ul key={key}>
-              {block.items.map((item, j) => <li key={j}>{inline(item, slug, `${key}-${j}`)}</li>)}
-            </ul>
-          )
-        }
-        if (block.type === 'ol') {
-          return (
-            <ol key={key}>
-              {block.items.map((item, j) => <li key={j}>{inline(item, slug, `${key}-${j}`)}</li>)}
-            </ol>
-          )
-        }
-        if (block.type === 'img') {
-          return (
-            <figure key={key}>
-              <img src={resolveSrc(slug, block.src)} alt={block.alt} />
-              {block.alt ? <figcaption>{block.alt}</figcaption> : null}
-            </figure>
-          )
-        }
-        return <p key={key}>{inline(block.text, slug, key)}</p>
-      })}
+      {intro.length > 0 ? (
+        <section className="note-section">
+          <div className="note-section-body">
+            {intro.map(({ block, index }) => renderBlock(block, slug, `${block.type}-${index}`))}
+          </div>
+        </section>
+      ) : null}
+      {sections.map((section) => (
+        <section className="note-section" key={section.key}>
+          <h2>{inline(section.heading.text, slug, section.key)}</h2>
+          <div className="note-section-body">
+            {section.blocks.map(({ block, index }) => renderBlock(block, slug, `${block.type}-${index}`))}
+          </div>
+        </section>
+      ))}
     </div>
   )
 }

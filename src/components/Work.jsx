@@ -1,4 +1,5 @@
 const PROJECTS = [
+  { name: 'JobPilot', desc: 'Job applications on autopilot', year: '2026', href: '', building: true },
   { name: 'The Boeing Company', desc: 'Global Aerospace & Aviation | BCA 767 Program Management Intern', year: '2026', href: 'https://www.boeing.com/', building: false },
   { name: 'Expeditors',  desc: 'Global Freight Forwarding | Customs Brokerage Intern', year: '2025', href: 'https://www.expeditors.com/', building: false },
   { name: 'Relish',  desc: 'Marketing & Analytics Startup | Marketing & Management Intern', year: '2024', href: 'https://tryrelish.com/', building: false },
@@ -15,8 +16,9 @@ export default function Work() {
       <div className="idx">
         {PROJECTS.map((p, i) => {
           const external = p.href.startsWith('http')
+          const Tag = p.href ? 'a' : 'div'
           return (
-            <a key={p.name} className="idx-row reveal" href={p.href}
+            <Tag key={p.name} className="idx-row reveal" {...(p.href ? { href: p.href } : {})}
                {...(external ? { target: '_blank', rel: 'noopener' } : {})}>
               <span className="idx-num">{String(i + 1).padStart(2, '0')}</span>
               <span className="idx-main">
@@ -25,9 +27,9 @@ export default function Work() {
               </span>
               <span className="idx-meta">
                 <span>{p.building ? <span className="idx-tag-building">Building</span> : p.year}</span>
-                <span className="idx-arrow">↗</span>
+                {p.href && <span className="idx-arrow">↗</span>}
               </span>
-            </a>
+            </Tag>
           )
         })}
       </div>

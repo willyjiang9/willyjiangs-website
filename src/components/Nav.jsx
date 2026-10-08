@@ -4,7 +4,8 @@ export default function Nav() {
       <div className="wrap nav-inner">
         <a href="/" className="monogram">Willy Jiang</a>
         <div className="nav-right">
-          <a href="/#work">work</a>
+          <a href="/#work">experience</a>
+          <a href="/#projects">projects</a>
           <a href="/#about">about</a>
           <a href="/#resume">resume</a>
           <a href="/#blog">blog</a>

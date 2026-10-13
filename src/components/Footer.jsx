@@ -2,14 +2,22 @@ export default function Footer() {
   return (
     <footer className="foot" id="hi">
       <div className="wrap">
-        <h2 className="reveal">say <a href="mailto:willyj915@gmail.com">hi</a></h2>
+        <h2 className="reveal">say <a href="mailto:willyj915@gmail.com" aria-label="Email Willy Jiang">hi</a></h2>
         <div className="foot-links reveal">
           <a href="/#blog">blog</a>
           <a href="mailto:willyj915@gmail.com">willyj915@gmail.com</a>
-          <a href="/Willy_Jiang_Resume.pdf" target="_blank" rel="noopener">resume</a>
-          <a href="https://www.linkedin.com/in/willyjiangg/" target="_blank" rel="noopener">linkedin</a>
-          <a href="https://memoiv.com" target="_blank" rel="noopener">memoiv</a>
-          <a href="https://rcourses.org" target="_blank" rel="noopener">r'courses</a>
+          <a href="/Willy_Jiang_Resume.pdf" target="_blank" rel="noopener">
+            resume<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a href="https://www.linkedin.com/in/willyjiangg/" target="_blank" rel="noopener">
+            linkedin<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a href="https://memoiv.com" target="_blank" rel="noopener">
+            memoiv<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a href="https://rcourses.org" target="_blank" rel="noopener">
+            r'courses<span className="sr-only"> (opens in a new tab)</span>
+          </a>
         </div>
         <div className="foot-base"><span>© 2026 Willy Jiang</span><span>California</span></div>
       </div>

@@ -27,8 +27,9 @@ function Index({ items }) {
             </span>
             <span className="idx-meta">
               <span>{p.building ? <span className="idx-tag-building">Building</span> : p.year}</span>
-              {p.href && <span className="idx-arrow">↗</span>}
+              {p.href && <span className="idx-arrow" aria-hidden="true">↗</span>}
             </span>
+            {external ? <span className="sr-only"> (opens in a new tab)</span> : null}
           </Tag>
         )
       })}

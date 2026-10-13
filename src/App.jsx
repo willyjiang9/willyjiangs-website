@@ -123,13 +123,24 @@ export default function App() {
 
   return (
     <>
+      <a
+        className="skip"
+        href="#content"
+        onClick={() => {
+          document.getElementById('content')?.focus({ preventScroll: true })
+        }}
+      >
+        Skip to content
+      </a>
       <CustomCursor />
       <Nav />
-      {noteSlug ? <Note slug={noteSlug} /> : (
+      {noteSlug ? (
+        <main id="content" tabIndex={-1}><Note slug={noteSlug} /></main>
+      ) : (
         <>
           <Hero />
           <Marquee />
-          <main><Work /><About /><Resume /><Notes /></main>
+          <main id="content" tabIndex={-1}><Work /><About /><Resume /><Notes /></main>
         </>
       )}
       <Footer />
